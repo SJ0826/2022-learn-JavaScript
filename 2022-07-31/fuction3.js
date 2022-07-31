@@ -22,7 +22,7 @@ const Cat = (name, age) => {
 } 
 
 const c = new Cat('고양이',1); // arrow함수는 this를 사용하지 않기 때문에 생성자함수를 생성할 수 없음.
-*/
+
 // 함수 안에서 함수를 만들어 리턴
 
 function plus(base) {
@@ -47,3 +47,4 @@ function hello(c){
 hello(function() {
     console.log('콜백');
 });
+*/
