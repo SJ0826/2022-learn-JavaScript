@@ -13,6 +13,4 @@ const p = new Promise((resolve, reject) =>{
     }, 1000 );
 });
 
-p.then(() => {
-    console.log('1000ms 후에 fulfulled됩니다.');
-})
+p.then(/*callback*/);
