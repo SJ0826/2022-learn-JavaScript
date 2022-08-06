@@ -1,0 +1,43 @@
+<!--
+    window.screen : 모니터의 해상도 즉 브라우저 바깥에 있는 부분까지 다 합한 것
+    window.outer : 브라우저의 URL, 탭, 전체적인 브라우저 사이즈
+    window.inner : 웹페이지 뿐만 아니라 웹페이지 스크롤바까지 합한 것.
+    documentElement.clientWidth : 스크롤바를 제외한 순수 문서 자체를 의미.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Window Size</title>
+    <style>
+        .tag{
+            display: inline-block;
+            background-color: thistle;
+            padding: 16px;
+            margin-top: 16px;
+            font-size: 48px;
+        }
+    </style>
+</head>
+<body>
+    <div class="tag">Window size</div>
+    <script>
+        const tag = document.querySelector('.tag'); //dom요소 중에 첫번째로 발견되는 태그가 변수 tag에 할당됨.
+        function updateTag() {
+            tag.innerHTML = `
+            window.screen: ${window.screen.width}, ${window.screen.height} <br>            
+            window.outer: ${window.outerWidth}, ${window.outerHeight} <br>
+            window.inner: ${window.innerWidth}, ${window.innerHeight} <br>
+            documentElement.clientWidth: ${document.documentElement.clientWidth}, ${document.documentElement.clientHeight} <br>
+            `;
+        }
+        window.addEventListener('resize', () => {//resize가 변결될때 마다 함수를 호출한다.
+           updateTag();
+        });
+        updateTag(); // 초기 화면부터 데이터가 보이게 해줌.
+    </script>
+    
+</body>
+</html>
