@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+
+  </style>
+</head>
+<body>
+  <section>
+    <img src="image.jpg" alt="avatar" />
+    <h1 id="brand">Dream Coding</h1>
+    <h3>Don't forget to code dream</h3>
+  </section>
+  <span>Hello World!</span>
+  <script>
+    const section = document.querySelector('section'); // 제일 처음에 발견되는 이미지에 적용
+    const h2 = document.createElement('h2');
+    h2.setAttribute('class', 'title'); // <h2 class="title"></h2>
+    h2.textContent = "This is tile" // <h2 class="title">This is title</h2>
+
+    const h3 = document.querySelector('h3');
+    section.insertBefore(h2, h3);
+  </script>
+</body>
+</html>
