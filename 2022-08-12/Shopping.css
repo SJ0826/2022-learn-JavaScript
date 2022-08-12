@@ -1,5 +1,6 @@
 * {
   box-sizing: border-box; 
+  background-color: #FCFFD5;
 }
 
 ul {
@@ -13,32 +14,29 @@ button {
   cursor: pointer;
 }
 body {
-  background-color: #ced3df;
   text-align: center;
+  background-color: aliceblue;
+  margin: 0;
 }
 
 .list {
   width: 400px;
   margin: auto; /* list의 기본 margin을 중간으로 오도록 바꿈.*/
-  background-color: #f1f0f7;
   border-radius: 20px;
 }
-.bar {
-  height: 8px;
-}
-.header_wrap {
-  height: 48px;
-  padding: 8px;
+
+.header {
+  height: 100px;
+  padding: 20px;
   font-size: 36px;
   border-radius: 20px 20px 0 0; /*위에만 적용*/
-  color: white;
   font-family: 'PT Serif', serif;
+  
   color: olivedrab;
 }
 
-.header_text{
-  margin: 10px 0 0 0;
-}
+
+
 .items {
   height: 500px;
   overflow-y: auto; /*아이템이 많아지면 자동으로 스크롤바 생성*/
@@ -77,6 +75,7 @@ body {
   outline: none;
   font-size: 24px;
   padding: 0 16px;
+  background-color: antiquewhite;
 }
 
 .footer__button {
