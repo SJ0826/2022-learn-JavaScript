@@ -1,0 +1,92 @@
+* {
+  box-sizing: border-box; 
+  background-color: #FCFFD5;
+}
+
+ul {
+  padding: 0;
+}
+
+button {
+  outline: none;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+body {
+  text-align: center;
+  background-color: aliceblue;
+  margin: 0;
+}
+
+.list {
+  width: 400px;
+  margin: auto; /* list의 기본 margin을 중간으로 오도록 바꿈.*/
+  border-radius: 20px;
+}
+
+.header {
+  height: 100px;
+  padding: 20px;
+  font-size: 36px;
+  border-radius: 20px 20px 0 0; /*위에만 적용*/
+  font-family: 'PT Serif', serif;
+  
+  color: olivedrab;
+}
+
+
+
+.items {
+  height: 500px;
+  overflow-y: auto; /*아이템이 많아지면 자동으로 스크롤바 생성*/
+}
+
+.item {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 32px;
+}
+
+.item__delete {
+  font-size: 16px;
+  transition: all 300ms ease-in; /*커서를 올렸을때 반응*/
+}
+
+.item__delete:hover { /* 마우스가 올라가면 빨간색으로 변함*/
+  color: red;
+  transform: scale(1,1);/*버튼에 마우스가 올라가면 커짐.*/
+}
+.item__divider {
+  width: 90%;
+  height: 1px;
+  background-color: lightgray;
+  margin: auto; /*div는 block 레벨이기때문에 자동으로 오른쪽에 margin이 생기므로, auto로 설정해줌.*/
+}
+.footer {
+  background: olivedrab;
+  border-radius: 0 0 20px 20px;/*아래에만 적용*/
+}
+
+.footer__input {
+  width: 100%;
+  height: 32px;
+  border: none;
+  outline: none;
+  font-size: 24px;
+  padding: 0 16px;
+  background-color: antiquewhite;
+}
+
+.footer__button {
+  width: 48px;
+  height: 48px;
+  font-size: 28px;
+  background-color: black;
+  border-radius: 50%;
+  color: white;
+}
+
+.footer__button:hover {
+  transform: scale(1,1);
+}
