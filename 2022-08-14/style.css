@@ -1,0 +1,55 @@
+
+body {
+  height: 100vh; 
+  width: 100vw;
+  background-image: url('background.png');
+  background-size: cover;
+  text-align: center;
+}
+
+.game__header {
+  width: 100%;
+  height: 140px;
+  border: 2px solid green;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+}
+
+.game__button {
+  width: 40px;
+  height: 40px;
+  
+}
+
+.game__timer {
+  width: 120px;
+  height: 40px;
+  
+  border: 2px solid black;
+  background-color: white;
+  margin: 5px 0px;
+  text-align: center;
+  font-size: 25px;
+}
+
+.game__score {
+  width: 40px;
+  height: 40px;
+  border: 2px solid black;
+  border-radius: 50%;
+  background-color: coral;
+  color: white;
+  font-size: 35px;
+  text-align: center;
+}
+
+.pop-up {
+  border: 2px solid black;
+  width: 300px;
+  height: 200px;
+  background-color: gray;
+  opacity: 80%;
+}
+
