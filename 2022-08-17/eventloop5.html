@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <button>Continue width setTimeout</button>
+  <script>
+    function handleClick() {
+      console.log('handleClick');
+      Promise.resolve(0) // promise 의 콜백은 micro que task를 이용한다.
+        .then(() => {
+          console.log('then');
+          handleClick();
+        });
+    }
+
+    const button = document.querySelector('button');
+    button.addEventListener('click', () => {
+      handleClick();
+    });
+  </script>
+</body>
+</html>
+<!--
+  콜스택에서 프로미스를 만들고 프로미스 then이 등록되고 마이크로 태스크 큐에 들어온다.active
+  이벤트루프는 마이크로대스크 큐에 등록된 콜백이 모두 빌때까지 기다리기때문에 이벤트루프가 멈춰 브라우저가 반응하지 않는다.
+-->
