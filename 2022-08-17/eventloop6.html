@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <button>RequestAnimationFrame</button>
+  <script>
+    const button = document.querySelector('button');
+    button.addEventListener('click', () => {
+      requestAnimationFrame(() => { // 렌더링이 되기 전 브라우저가 콜백함수를 실행하는 것을 보장해준다.
+        document.body.style.backgroundColor = 'beige';
+      });
+      requestAnimationFrame(() => {
+        document.body.style.backgroundColor = 'orange';
+      });
+      requestAnimationFrame(() => {
+        document.body.style.backgroundColor = 'red';
+      });
+    })
+  </script>
+</body>
+</html>
+<!-- 
+  총 세개의 코드블럭이 호출한 순서대로 request Animation Frame 큐에 등록된다.active
+  QUE는 FIFO의 구조를 가지고 있기 때문에 마지막에 들어온 코드가 적용이 된다.active
+  최종적으로 빨간색이 적요오딘 상태에서 렌더트리가 만들어지고 브라우저에 표기가 완료된다.
+-->
