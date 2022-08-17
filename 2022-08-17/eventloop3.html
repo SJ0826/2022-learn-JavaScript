@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <button>While(true)</button>
+  <script>
+    const button = document.querySelector('button');
+    button.addEventListener('click', () => {
+      while(true) { // 콜 스택이 계속되고 있음. 브라우저가 반응하지 않음. 
+        //repeat
+      }
+    });
+  </script>
+</body>
+</html>
+<!--
+  콜스택에 등록할 콜백함수를 작성할 때는 오랫동안 머물지 않게 하는 것이 좋다.
+  loop나 재귀함수등은 조심해서 사용해야한다.
+-->
