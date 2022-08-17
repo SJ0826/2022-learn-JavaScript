@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    const button = document.querySelector('button');
+    button.addEventListener('click', () => { // 클릭을 하면  콜백 함수는 task que에 들어간다.
+      const element = document.createElement('hi'); // 어떤순서로 작성되어있든지 상관없다. 
+      document.body.appendChild(element); 
+      element.style.color = 'red';
+      element.innerText = 'hello';
+    });
+  </script>
+</body>
+</html>
+<!--
+  자바스크립트 엔진이 콜백에 들어있는 코드블럭이 다 완료될떄 까지 기다렸다가 나중에 렌더링이 발생하기 때문이다.
+-->
