@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <button>Continue width setTimeout</button>
+  <script>
+    function handleClick() {
+      console.log('handleClick');
+      setTimeout(() => {
+        console.log('setTimeout');
+        handleClick(); // 콜스택에 무한으로 추가되어 동일한 내용의 이벤트루프가 반복된다. 
+      }, 0);
+    }
+
+    const button = document.querySelector('button');
+    button.addEventListener('click', () => {
+      handleClick();
+    });
+  </script>
+</body>
+</html>
+<!--
+  이벤트루프느는 태스크 큐에서 하나의 함수만 콜스택으로 가져오고, 이벤트 루프를 순회한다. 도중 렌더링도 처리하고 사용자가 입력한 이벤트까지 처리를 한다.
+  다시 테스크 큐에 아이템이 있으면 무한 반복한다.
+  
+-->
