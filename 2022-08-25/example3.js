@@ -1,9 +1,13 @@
-var copyObject = function (target) {
+var copyObjectDeep = function (target) {
   var result = {};
-  for (var prop in target) {
-    result[prop] = target[prop];
-  }
-  return result;
+  if (typeof target === 'object' && target !== null) {
+    for (var prop in target) {
+      result[prop] = copyObjectDeep(target[prop]);
+    }
+  } else {
+     result = target;
+   }
+   return result;
 };
 
 var user = {
@@ -14,8 +18,9 @@ var user = {
     facebood: 'http://facebook.con/abc'
   }
 };
-var user2 = copyObject(user);
-user2.urls = copyObject(user.urls);
+
+var user2 = copyObjectDeep(user);
+
 
 user.name = 'Jung';
 console.log(user.name === user2.name); //false
