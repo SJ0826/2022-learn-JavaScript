@@ -14,6 +14,13 @@ class Animal {
 }
 
 class Rabbit extends Animal {
+  
+  constructor(name, earLength) {
+    super(name);
+    this.speed = 0;
+    this.name = name;
+    this.earLength = earLength;
+  }
   hide() {
     alert(`${this.name} 이/가 숨었습니다!`);
   }
