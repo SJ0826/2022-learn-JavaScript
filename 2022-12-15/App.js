@@ -10,6 +10,8 @@ const store = {
 };
 
 function App() {
+  this.menu = [];
+
   const updateMenuCount = () => {
     const memuCount = $("#espresso-menu-list").querySelectorAll("li").length;
     $(".menu-count").innerText = `총 ${memuCount}개`;
@@ -22,11 +24,27 @@ function App() {
     }
     if (e.key === "Enter") {
       const espressoMenuName = $("#espresso-menu-form").value;
-      const menuItemTemplate = (espressoMenuName) => {};
-      $("#espresso-menu-list").insertAdjacentHTML(
-        "beforeend",
-        menuItemTemplate(espressoMenuName)
-      );
+      this.menu.push({ name: espressoMenuName });
+      const template = this.menu.map((item) = {
+        return `
+        <li class="menu-list-item d-flex items-center py-2">
+        <span class="w-100 pl-2 menu-name ">${item.name}</span>
+          <button
+            type="button"
+            class="bg-gray-50 text-gray-500 text-sm mr-1 menu-edit-button"
+          >
+            수정
+          </button>
+          <button
+            type="button"
+            class="bg-gray-50 text-gray-500 text-sm menu-remove-button"
+          >
+            삭제
+          </button>
+        </li>`
+      }). join('')
+
+      $("#espresso-menu-list").innerHTML = template;
       updateMenuCount();
       $("#espresso-menu-name").value = "";
     }
