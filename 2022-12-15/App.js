@@ -5,10 +5,7 @@ function App() {
     e.preventdefault();
   });
 
-  $("#espresso-menu-name").addEventListener("keypress", (e) => {
-    if (e.key !== "Enter") {
-      return;
-    }
+  const addMenuName = () => {
     if ($("#espresso-menu-name").value === "") {
       alert("값을 입력해주세요.");
       return;
@@ -24,6 +21,17 @@ function App() {
       $(".menu-count").innerText = `총 ${memuCount}개`;
       $("#espresso-menu-name").value = "";
     }
+  };
+
+  $("#espresso-menu-submit-button").addEventListener("keypress", (e) => {
+    addMenuName();
+  });
+
+  $("#espresso-menu-name").addEventListener("keypress", (e) => {
+    if (e.key !== "Enter") {
+      return;
+    }
+    addMenuName();
   });
 }
 
